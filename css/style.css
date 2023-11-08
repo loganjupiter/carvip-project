@@ -1,0 +1,168 @@
+/* Mi código CSS */
+
+.card-container.mosaico {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.card-container.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+::selection {
+  background-color: rgb(250, 165, 9);
+  color: rgb(248, 244, 244) fff;
+}
+
+option {
+  width: 2rem;
+}
+
+body {
+  padding-top: 60px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+}
+
+/*****************************************************************
+  
+      HEADER
+  
+  /*****************************************************************/
+
+#header {
+  background-color: #222;
+  border-bottom: 4px solid #ff8f00;
+}
+
+#header-logo {
+  width: auto;
+  height: 20px;
+}
+
+/*****************************************************************
+  
+      HOME
+  
+  /*****************************************************************/
+
+#home {
+  flex: 1;
+}
+
+#home-intro {
+  border-bottom: 4px solid #ff8f00;
+  height: 36vw;
+  background-size: cover;
+  background-position: center center;
+  background-image: url("../img/cars_home/audi_1.jpg");
+  margin-bottom: 30px;
+}
+
+#home h1 span {
+  font-weight: 300;
+}
+
+#home .card h4 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+#home hr {
+  margin: 1.9rem 0 2.5rem;
+}
+
+@media (max-width: 767px) {
+  #home-intro {
+    height: 30vh;
+  }
+  #home h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/*****************************************************************
+  
+      FOOTER
+  
+  /*****************************************************************/
+
+#footer {
+  border-top: 4px solid #ff8f00;
+  background-color: #222;
+  margin-top: 40px;
+  color: #eeeeee;
+  padding: 30px;
+  font-size: 1rem;
+}
+
+#footer-logo {
+  width: auto;
+  height: 20px;
+  margin-bottom: 15px;
+}
+
+#footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+#footer ul li {
+  list-style: none;
+  margin-bottom: 6px;
+}
+
+#footer ul li a,
+#footer ul li a:visited {
+  color: #eeeeee;
+  text-decoration: none;
+}
+
+.icons-media {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-border {
+  border-radius: 4.5px;
+}
+
+/*carrusel Sofi*/
+.img {
+  object-fit: cover;
+}
+
+.imgCarousel {
+  object-fit: cover;
+  width: 100%;
+  height: 600px;
+  display: block;
+  margin: 0 auto;
+}
+.bi-star-fill {
+  color: orange;
+}
+.autoImg {
+  object-fit: cover;
+  width: 100%;
+  height: 17rem;
+}
+
+.card {
+  width: 100%;
+}
+.badge {
+  background-color: orange;
+}
