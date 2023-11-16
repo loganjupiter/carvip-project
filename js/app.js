@@ -1,5 +1,8 @@
 const selectAnios = document.querySelector("#selectAnios");
+<<<<<<< Updated upstream
 const estadoSelect = document.querySelector("#statusSelect");
+=======
+>>>>>>> Stashed changes
 
 function anios() {
   for (let year = 2023; year >= 1900; year--) {
@@ -57,7 +60,11 @@ function mostrarSinFiltrar() {
     .then((response) => response.json())
     .then((data) => {
       for (let i = 0; i < data.length; i++) {
+<<<<<<< Updated upstream
         const auto = data[i];
+=======
+        const auto = data[i]; // Mover la declaración de 'auto' aquí
+>>>>>>> Stashed changes
         const starIcons = [];
         for (let i = 1; i <= 5; i++) {
           if (i <= auto.rating) {
@@ -66,7 +73,10 @@ function mostrarSinFiltrar() {
             starIcons.push("<i class='bi bi-star'></i>");
           }
         }
+<<<<<<< Updated upstream
         const precioFormateado = auto.price_usd.toLocaleString();
+=======
+>>>>>>> Stashed changes
 
         const badge =
           auto.status === 1
@@ -88,7 +98,11 @@ function mostrarSinFiltrar() {
                     <h5 class="card-title">${auto.brand} ${auto.model}</h5>
                     <div class="d-flex justify-content-between">
                       <p class="pe-1" id="Datos">${auto.year}</p>
+<<<<<<< Updated upstream
                       <p class="pe-1">| U$S ${precioFormateado} |</p>
+=======
+                      <p class="pe-1">| ${auto.price_usd} |</p>
+>>>>>>> Stashed changes
                       <form>
                         <p> ${starIcons.join("")} </p>
                       </form>
@@ -125,6 +139,7 @@ mostrarSinFiltrar();
 
 //FILTRADOS
 
+<<<<<<< Updated upstream
 const filtrar = document.querySelector("#filtrar");
 
 filtrar.addEventListener("click", function () {
@@ -213,3 +228,75 @@ function cambiarANormal() {
   const cardContainer = document.querySelector(".card-container");
   cardContainer.classList.remove("mosaico");
 }
+=======
+function filtrarDatos() {
+  const modeloSelect = document.querySelector("#modeloSelect");
+  const anioSelect = document.querySelector("#selectAnios");
+  const estadoSelect = document.querySelector("#estadoSelect");
+
+  const modeloSeleccionado = modeloSelect.value;
+  const anioSeleccionado = anioSelect.value;
+  const estadoSeleccionado = estadoSelect.value;
+
+  let apiUrl = "https://ha-front-api-proyecto-final.vercel.app/cars";
+
+  // Construir la URL con los parámetros de filtrado seleccionados
+  if (modeloSeleccionado !== "Seleccionar") {
+    apiUrl = `https://ha-front-api-proyecto-final.vercel.app/models?brand=${modeloSeleccionado}`;
+  }
+
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      const autosFiltrados = data.filter((auto) => {
+        // Resto del código de filtrado según año y estado (similar al ejemplo anterior)
+      });
+
+      mostrarAutosFiltrados(autosFiltrados);
+    })
+    .catch((error) => {
+      console.error("Error al filtrar datos", error);
+      cardContainer.innerHTML =
+        "<h4>Error al filtrar los datos de los autos</h4>";
+    });
+}
+
+/* <div class="card mb-3" style="max-width: 100%">
+              <div class="row g-0">
+                <div class="col-md-4 position-relative border p-1">
+                  <span
+                    class="position-absolute top-0 start-0 mt-2 ms-2 badge bg-secondary"
+                    >Nuevo</span
+                  >
+                  <img
+                    src="img/cars_sales/audi_a6_quattro_2016.jpg"
+                    class="img-fluid"
+                    alt="audi_a6_quattro_2016"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Audi A6</h5>
+                    <p id="Datos">2016 | USD 92.000 | 5 estrellas</p>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Dolorem nostrum molestiae exercitationem perferendis
+                      provident reiciendis, dolore cum odit praesentium nemo
+                      quasi ea iste commodi labore quis nobis excepturi error
+                      libero.
+                    </p>
+                    <button type="button" class="btn btn-success">
+                      <i class="bi bi-cart2"></i> Shop
+                    </button>
+                    <button type="button" class="btn btn-outline-dark">
+                      <i class="bi bi-plus-square"></i> Mas informacion
+                    </button>
+                    <button type="button" class="btn btn-outline-dark">
+                      <i class="bi bi-share"></i> Compartir
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr /> */
+>>>>>>> Stashed changes
